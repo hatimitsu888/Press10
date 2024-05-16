@@ -33,8 +33,10 @@ scoreboard players operation &range math = &range tmp
 scoreboard players operation &range math *= &1000 math
 scoreboard players operation &range math /= &tick tmp
 
-#移動距離設定
-execute store result entity @s data.move float 0.001 run scoreboard players get &range math
+#移動距離設定（いらない？）
+execute store result entity @s data.range float 1 run scoreboard players get &range tmp
+#1tick毎の移動距離設定
+execute store result entity @s data.move.r float 0.001 run scoreboard players get &range math
 #向きを設定
 execute if score &direction tmp matches 0 run data modify entity @s Rotation set value [  0f,-90f]
 execute if score &direction tmp matches 1 run data modify entity @s Rotation set value [  0f, 90f]
@@ -44,3 +46,8 @@ execute if score &direction tmp matches 4 run data modify entity @s Rotation set
 execute if score &direction tmp matches 5 run data modify entity @s Rotation set value [180f,  0f]
 #execute as 壁 at @s rotated as マーカー run tp 壁 ^ ^ ^移動距離
 #にすればマーカーは動かず壁だけがマーカーの向いてる方向に進むようになる
+
+#何秒動くか設定
+$scoreboard players set @s tick $(t)
+#動くためのtickを設定
+scoreboard players set @s move_tick 0
