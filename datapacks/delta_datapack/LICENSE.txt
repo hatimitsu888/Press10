@@ -1,0 +1,3 @@
+Delta
+Copyright (c) 2022 BigPapi13
+https://github.com/BigPapi13/Delta/blob/main/LICENSE
