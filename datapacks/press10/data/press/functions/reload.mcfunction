@@ -23,3 +23,16 @@ scoreboard objectives add tmp dummy
 
 #> id
 scoreboard objectives add id dummy
+
+#> 雪玉
+scoreboard objectives add use_ball used:snowball
+
+#> 壁戻るようのスコア
+scoreboard objectives add stepback.range dummy
+scoreboard objectives add stepback.tick dummy
+scoreboard objectives add stepback.move_tick dummy
+
+#> ストレージ
+#define storage press:
+data remove storage press: stepback
+data modify storage press: stepback set value {backrange:0f}
