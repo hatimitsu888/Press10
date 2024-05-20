@@ -9,7 +9,8 @@ execute as @e[tag=wall] if score @s id = &tmpid id run tag @s add this_wall
 $execute as @e[tag=this_wall,tag=!core] at @s rotated as @e[tag=this_wall,tag=core] run tp @s ^ ^ ^$(r)
 
 #壁に当たってたらプレイヤーを飛ばす
-execute as @e[tag=this_wall,tag=!core] at @s align xyz positioned ~-0.005 ~ ~-0.005 as @a[dx=0.01,dy=0,dz=0.01] at @s rotated as @e[tag=this_wall,tag=core] run function delta:api/launch_looking 
+#execute as @e[tag=this_wall,tag=!core] at @s align xyz positioned ~-0.005 ~ ~-0.005 as @a[dx=0.01,dy=0,dz=0.01] at @s rotated as @e[tag=this_wall,tag=core] run function delta:api/launch_looking 
+execute as @e[tag=this_wall,tag=!core] at @s positioned ~-0.5 ~ ~-0.5 as @a[dx=0,dy=0,dz=0] at @s rotated as @e[tag=this_wall,tag=core] run function delta:api/launch_looking 
 
 #壁に埋まったら死ぬ処理
 #####################
