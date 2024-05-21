@@ -50,4 +50,4 @@ execute if score &direction tmp matches 5 run data modify entity @s Rotation set
 #何秒動くか設定
 $scoreboard players set @s tick $(t)
 #動くためのtickを設定
-scoreboard players set @s move_tick 0
+$scoreboard players set @s move_tick $(t)

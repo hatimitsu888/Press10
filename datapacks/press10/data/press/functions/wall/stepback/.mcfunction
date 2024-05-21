@@ -7,6 +7,9 @@
 $scoreboard players set @s stepback.range $(tickrange)
 $scoreboard players set @s stepback.tick $(tick)
 
+#マーカーにタイムを加算
+scoreboard players operation @s move_tick += @s stepback.tickrange
+
 #1tickに進む距離を取得
 execute store result score &tickrange math run data get entity @s data.move.r 1000
 #戻る距離を計算

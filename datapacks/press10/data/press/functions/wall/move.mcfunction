@@ -19,6 +19,6 @@ execute as @e[tag=this_wall,tag=!core] at @s positioned ~-0.5 ~ ~-0.5 as @a[dx=0
 tag @e[tag=this_wall] remove this_wall
 
 #カウント
-scoreboard players add @s move_tick 1
+scoreboard players remove @s move_tick 1
 #時間切れ
-execute if score @s move_tick > @s tick run scoreboard players reset @s move_tick
+execute if score @s move_tick matches ..0 run scoreboard players reset @s move_tick
