@@ -34,7 +34,13 @@ scoreboard objectives add stepback.tick dummy
 scoreboard objectives add stepback.move_tick dummy
 scoreboard objectives add stepback.moved_range dummy
 
-#> ストレージ
+#> tickコマンド使用検知用
+scoreboard objectives add tickdetect dummy
+
+#ストレージ
 #define storage press:
 data remove storage press: stepback
 data modify storage press: stepback set value {backrange:0f}
+
+data remove storage press: tickdetection
+data modify storage press: tickdetection set value {}
