@@ -5,8 +5,6 @@ scoreboard players add @s stepback.move_tick 1
 scoreboard players set &10000000 math 10000000
 scoreboard players set &10000 math 10000
 scoreboard players set &10 math 10
-#スコアリセット
-scoreboard players set &move_diff math 0
 
 ##(10000 - ((endtick * 1000 - nowtick * 1000) / endtick / 10)^4 / 10000) * range - 前回の移動距離
 #tickを取得
@@ -26,18 +24,18 @@ scoreboard players operation &power math = &end_tick math
 scoreboard players operation &power math *= &end_tick math
 scoreboard players operation &power math *= &end_tick math
 scoreboard players operation &power math *= &end_tick math
-#10000で割る
+#1000で割る
 scoreboard players operation &power math /= &10000 math
-#10000から引く
+#100000から引く
 scoreboard players operation &move_range math = &10000 math
 scoreboard players operation &move_range math -= &power math
 #移動する長さをかける
 scoreboard players operation &move_range math *= @s stepback.range
 scoreboard players operation &move_diff math = &move_range math
 #前の長さとの差分をとる
-scoreboard players operation &move_diff math -= &moved_range math
+scoreboard players operation &move_diff math -= @s stepback.moved_range
 #長さを保存する
-scoreboard players operation &moved_range math = &move_range math
+scoreboard players operation @s stepback.moved_range = &move_range math
 
 #ストレージに保存
 execute store result storage press: stepback.backrange float 0.0000001 run scoreboard players get &move_diff math
