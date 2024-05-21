@@ -29,8 +29,10 @@ scoreboard objectives add use_ball used:snowball
 
 #> 壁戻るようのスコア
 scoreboard objectives add stepback.range dummy
+scoreboard objectives add stepback.tickrange dummy
 scoreboard objectives add stepback.tick dummy
 scoreboard objectives add stepback.move_tick dummy
+scoreboard objectives add stepback.moved_range dummy
 
 #> ストレージ
 #define storage press:
