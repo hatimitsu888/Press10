@@ -24,9 +24,9 @@ scoreboard players operation &power math = &end_tick math
 scoreboard players operation &power math *= &end_tick math
 scoreboard players operation &power math *= &end_tick math
 scoreboard players operation &power math *= &end_tick math
-#1000で割る
+#10000で割る
 scoreboard players operation &power math /= &10000 math
-#100000から引く
+#10000から引く
 scoreboard players operation &move_range math = &10000 math
 scoreboard players operation &move_range math -= &power math
 #移動する長さをかける
