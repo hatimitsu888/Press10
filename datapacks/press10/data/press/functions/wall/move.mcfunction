@@ -13,10 +13,12 @@ $execute as @e[tag=this_wall,tag=!core] at @s rotated as @e[tag=this_wall,tag=co
 execute as @e[tag=this_wall,tag=!core] at @s positioned ~-0.5 ~ ~-0.5 as @a[dx=0,dy=0,dz=0] at @s rotated as @e[tag=this_wall,tag=core] run function delta:api/launch_looking 
 
 #壁に埋まったら死ぬ処理
-#####################
+execute if score &mode gamedata matches 1 at @e[tag=this_wall,tag=!core] positioned ~-0.5 ~ ~-0.5 positioned ~-0.3 ~-0.3 ~-0.3 as @a[dx=0,dy=0,dz=0] positioned ~0.6 ~0.6 ~0.6 if entity @a[dx=0,dy=0,dz=0] run tag @s add pressed
+execute as @a[tag=pressed] run function press:stage/reset/fail
 
 #タグ除去
 tag @e[tag=this_wall] remove this_wall
+tag @a[tag=pressed] remove pressed
 
 #カウント
 scoreboard players remove @s move_tick 1
