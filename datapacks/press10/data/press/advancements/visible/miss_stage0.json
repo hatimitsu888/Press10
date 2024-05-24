@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:pufferfish_bucket",
+            "count": 1
+        },
+        "title": {
+            "text": "一体何が起きた！？"
+        },
+        "description": {
+            "text": "ステージ0でミスをする。"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "press:visible/start_game",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

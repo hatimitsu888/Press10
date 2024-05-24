@@ -1,0 +1,42 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:clock",
+            "count": 1
+        },
+        "title": {
+            "text": "ザ・ワールドォォォｯ！！！"
+        },
+        "description": {
+            "text": "まさか貴様・・・/tickコマンドなんて使ってないよな・・・？"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "press:visible/start_game",
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:value_check",
+                        "value": {
+                            "type": "minecraft:score",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "&use_tick_command"
+                            },
+                            "score": "tickdetect"
+                        },
+                        "range": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
