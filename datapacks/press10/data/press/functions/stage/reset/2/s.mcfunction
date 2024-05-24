@@ -9,6 +9,6 @@ setblock 66 -54 0 stone_button[facing=east,face=floor] replace
 #タイトル表示
 title @a times 1s 3s 1s
 title @a title {"text":"Stage3"}
-title @a subtitle {"text":"～柱～"}
+title @a subtitle {"text":"～針の道～"}
 #初期化処理
 function press:stage/reset/2/
