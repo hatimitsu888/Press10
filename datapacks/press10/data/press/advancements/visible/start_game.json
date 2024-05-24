@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:quartz_block",
+            "count": 1
+        },
+        "title": {
+            "text": "圧縮10秒前"
+        },
+        "description": {
+            "text": "「圧縮10秒前」へようこそ！"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "show_toast": true,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "rewards": {
+        "function": "minecraft:a"
+    }
+}
