@@ -7,6 +7,9 @@
 $scoreboard players set @s stepback.tickrange $(tickrange)
 $scoreboard players set @s stepback.tick $(tick)
 
+#カウントダウンのタイムを加算
+execute if score &mode gamedata matches 1 run scoreboard players operation &countdown tick += @s stepback.tickrange
+
 #マーカーにタイムを加算
 scoreboard players operation @s move_tick += @s stepback.tickrange
 
